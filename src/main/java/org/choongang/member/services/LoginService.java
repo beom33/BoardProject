@@ -13,7 +13,7 @@ import org.choongang.member.validators.LoginValidator;
 @RequiredArgsConstructor
 public class LoginService {
 
-    private final LoginValidator loginValidator;
+    private final LoginValidator loginValidator; // 테스트
     private final MemberMapper mapper;
     private final HttpSession session;
 
