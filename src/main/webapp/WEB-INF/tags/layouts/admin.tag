@@ -9,7 +9,7 @@
 <c:url var="cssUrl" value="/css/" />
 <c:url var="jsUrl" value="/js/" />
 <c:url var="homeUrl" value="/admin" />
-<c:url var="logoUrl" value="/images/logo.png" />
+<c:url var="logoUrl" value="/images/NFace2.png" />
 
 <layout:common title="${title}">
     <jsp:attribute name="header">
