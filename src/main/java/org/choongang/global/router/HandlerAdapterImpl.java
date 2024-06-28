@@ -73,7 +73,7 @@ public class HandlerAdapterImpl implements HandlerAdapter {
                 for (String rUrl : rootUrls) {
                     String _url = request.getContextPath() + rUrl + url;
                     for (String s : matched) {
-                        _url = _url.replace("{" + s + "}", "(\\w*)");
+                        _url = _url.replace("{" + s + "}", "([^/]+)/?");
                     }
 
                     Pattern p2 = Pattern.compile("^" + _url+"$");
@@ -162,7 +162,7 @@ public class HandlerAdapterImpl implements HandlerAdapter {
         /* 요청 메서드 호출 S */
 
         // controller 적용 범위  Advice 처리
-      boolean isContinue =  handlerControllerAdvice.handle(controller);
+        boolean isContinue = handlerControllerAdvice.handle(controller);
         if (!isContinue) { // 컨트롤러 메서드 실행 X
             return;
         }
@@ -299,6 +299,6 @@ public class HandlerAdapterImpl implements HandlerAdapter {
             return mapping.value();
         }
 
-        return null;
+        return new String[] {""};
     }
 }
